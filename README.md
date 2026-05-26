@@ -39,3 +39,36 @@ pinn-beam-mechanics/
 ├── .gitignore              
 ├── requirements.txt        
 └── README.md
+```
+
+## ⚙️ Installation
+
+Clone the repository:
+```bash 
+git clone https://github.com/YOUR_USERNAME/pinn-beam-mechanics.git
+cd pinn-beam-mechanics
+```
+
+Create a virtual environment (Recommended):
+```bash
+python -m venv venv
+source venv/bin/activate    # On Windows use: venv\Scripts\activate
+```
+
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+## 🚀 Usage
+
+To train the PINN and generate the structural diagrams, simply run the training script. Because the model learns purely from physics equations rather than big data, training is extremely fast and takes only a few seconds on a standard CPU.
+
+```bash
+python src/train.py
+```
+### Outputs
+The script will solve the PDE and automatically generate three aligned graphs comparing the PINN's unsupervised predictions against the exact analytical mathematical solutions for:
+1. Deflection Curve $v(x)$
+2. Bending Moment Diagram $M(x) = EI v''(x)$
+3. Shear Force Diagram $V(x) = -EI v'''(x)$
